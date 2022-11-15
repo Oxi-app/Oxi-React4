@@ -1,33 +1,62 @@
 {
   "expo": {
-    "name": "Oxi-React4",
-    "slug": "Oxi-React4",
-    "version": "1.0.0",
+    "name": "Oxi",
+    "slug": "Oxi",
+    "version": "1.0.4",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/cd0e8938-3cc2-41b4-9d58-ee3cde1b01d2"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nishandudakia.Oxi",
+      "buildNumber": "21",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to scan barcodes of products"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logo.png"
+    },
+    "plugins": [
+      "sentry-expo"
+    ],
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "oxi-technologies-ltd",
+            "project": "oxi",
+            "authToken": "3634ebe1d1854d3dbc513e6e4dacd0c553feec2d4b90499dbac3f824ccd4653c"
+          }
+        }
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cd0e8938-3cc2-41b4-9d58-ee3cde1b01d2"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }

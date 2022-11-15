@@ -1,0 +1,29 @@
+type Basket @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  Barcode: String
+  Merchant: String
+  Name: String
+  Price: String
+  Weight: String
+  Material: String
+  Carbon: String
+  owner: String
+}
+
+type Materials @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  Material: String
+  CO2perkg: String
+}
+
+type Item @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  Barcode: String
+  Merchant: String
+  Name: String
+  Price: String
+  Weight: String
+  Material: String
+  Carbon: String
+}
+ 
