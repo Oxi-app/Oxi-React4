@@ -1,3 +1,61 @@
+type ExampleItem @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  Barcode: String
+  Merchant: String
+  Name: String
+  Price: String
+  Material: String
+  Weight: String
+  Carbon: String
+}
+
+type Fuel @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  Type: String
+  CO2perkg: String
+}
+
+type Electricity @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  Source: String
+  CO2perkWh: String
+}
+
+type Transport @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  Mode: String
+  CO2perMile: String
+}
+
+type RawMaterials @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  Barcode: String
+  Material: String
+  Mass: String
+  Carbon: String
+}
+
+type Processes @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  Barcode: String
+  Electricity: String
+  Renewable: String
+  Source: String
+  Fuel: String
+  Type: String
+  Carbon: String
+  Name: String
+}
+
+type Logistics @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  Barcode: String
+  Location: String
+  Distance: String
+  Mode: String
+  Carbon: String
+}
+
 type Basket @model @auth(rules: [{allow: owner}]) {
   id: ID!
   Barcode: String
@@ -11,19 +69,16 @@ type Basket @model @auth(rules: [{allow: owner}]) {
 }
 
 type Materials @model @auth(rules: [{allow: private}]) {
-  id: ID!
   Material: String
   CO2perkg: String
+  id: ID!
 }
 
 type Item @model @auth(rules: [{allow: private}]) {
   id: ID!
   Barcode: String
-  Merchant: String
   Name: String
-  Price: String
-  Weight: String
-  Material: String
+  Manufacturer: String
   Carbon: String
 }
  

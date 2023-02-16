@@ -2,7 +2,7 @@
   "expo": {
     "name": "Oxi",
     "slug": "Oxi",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
@@ -21,7 +21,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.nishandudakia.Oxi",
-      "buildNumber": "21",
+      "buildNumber": "22",
       "infoPlist": {
         "NSCameraUsageDescription": "This app uses the camera to scan barcodes of products"
       }

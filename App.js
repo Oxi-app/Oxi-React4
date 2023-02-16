@@ -2,7 +2,7 @@ import {Amplify} from "@aws-amplify/core";
 import { DataStore } from "@aws-amplify/datastore";
 import {React,  useState, useEffect, useRef  } from "react";
 import {StyleSheet, Text, TextInput, View, Image, Keyboard,TouchableWithoutFeedback, SafeAreaView, Modal, Alert, Pressable, ScrollView} from "react-native";
-import { Item, Materials, Basket } from "./src/models";
+import { ExampleItem, Item, Materials, Basket } from "./src/models";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import awsconfig from './src/aws-exports'
 Amplify.configure({
@@ -131,7 +131,7 @@ function HomeScreen({navigation, signOut, user}){
   }
 
 
-    const subscription = DataStore.observe(Item).subscribe(() =>
+    const subscription = DataStore.observe(ExampleItem).subscribe(() =>
       createTransaction()
     );
 
@@ -231,11 +231,12 @@ function HomeScreen({navigation, signOut, user}){
   console.log(userSub)
 
 
+
   //Retrieves information about the product scanned when identified in the DB, saves the barcode reading as a new 'transaction'
   async function createTransaction() {
 
     try{
-    const transaction = await DataStore.query(Item, (p) =>
+    const transaction = await DataStore.query(ExampleItem, (p) =>
       p.Barcode("eq", barcode)
     );
   
@@ -284,7 +285,7 @@ function HomeScreen({navigation, signOut, user}){
 
       try{
         await DataStore.save(
-          new Item({
+          new ExampleItem({
             Name: name,
             Merchant: merchant,
             Price: price,
@@ -1041,7 +1042,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingBottom: '3%'
-
   },
 
   dateView: {
