@@ -1,3 +1,9 @@
+type Points @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  Points: String
+  owner: String
+}
+
 type ExampleItem @model @auth(rules: [{allow: private}]) {
   id: ID!
   Barcode: String

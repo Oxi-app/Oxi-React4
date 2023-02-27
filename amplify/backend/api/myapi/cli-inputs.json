@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "paths": {
+    "/getSupportedCurrencies": {
+      "name": "/getSupportedCurrencies",
+      "lambdaFunction": "mylambda",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/addPaymentCard": {
+      "name": "/addPaymentCard",
+      "lambdaFunction": "addPaymentCardFunction",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/getTransactions": {
+      "name": "/getTransactions",
+      "lambdaFunction": "getTransactions",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/deletePaymentCard": {
+      "name": "/deletePaymentCard",
+      "lambdaFunction": "deletePaymentCard",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
